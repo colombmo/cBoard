@@ -1,0 +1,32 @@
+﻿<Window x:Class="MemoBoard.MainWindow"
+        Name="window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MemoBoard"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        Title="MemoBoard" Height="{x:Static SystemParameters.FullPrimaryScreenHeight}" Width="{x:Static SystemParameters.FullPrimaryScreenWidth}"
+        >
+    <Grid>
+        <Canvas
+            Panel.ZIndex="0"
+            x:Name="MemoBoardCanvas"
+            VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+            Background="White"
+            TouchDown="TouchStart"
+            TouchMove="TouchMoved"
+            TouchUp="TouchEnd">
+            <Canvas
+                x:Name="PostitLayer"
+                Panel.ZIndex="2"
+                VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></Canvas>
+        </Canvas>
+        <Canvas x:Name="GUICanvas"
+            Panel.ZIndex="1"
+            VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        </Canvas>
+    </Grid>
+</Window>
